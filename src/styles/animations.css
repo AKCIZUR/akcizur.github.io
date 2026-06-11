@@ -1,0 +1,133 @@
+/* ============================================
+   IN/OUT MOTION SYSTÉM
+   ============================================ */
+
+html.motion-ready [data-motion] {
+    transition-property: opacity, transform, filter;
+    transition-duration: var(--motion-duration);
+    transition-timing-function: var(--motion-ease);
+    will-change: opacity, transform, filter;
+}
+
+html.motion-ready [data-motion-section] {
+    transition: none;
+}
+
+html.motion-ready [data-motion-section] [data-motion="fade"] {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(8px);
+}
+
+html.motion-ready [data-motion-section] [data-motion="slide-up"] {
+    opacity: 0;
+    transform: translate3d(0, 64px, 0);
+    filter: blur(12px);
+}
+
+html.motion-ready [data-motion-section] [data-motion="slide-left"] {
+    opacity: 0;
+    transform: translate3d(-72px, 0, 0);
+    filter: blur(12px);
+}
+
+html.motion-ready [data-motion-section] [data-motion="slide-right"] {
+    opacity: 0;
+    transform: translate3d(72px, 0, 0);
+    filter: blur(12px);
+}
+
+html.motion-ready [data-motion-section] [data-motion="scale"] {
+    opacity: 0;
+    transform: scale(.92);
+    filter: blur(10px);
+    transform-origin: center center;
+}
+
+html.motion-ready [data-motion-section] [data-motion="lift"] {
+    opacity: 0;
+    transform: translate3d(0, 72px, 0) scale(.96);
+    filter: blur(12px);
+    transform-origin: center center;
+}
+
+html.motion-ready [data-motion-section].is-visible [data-motion="fade"],
+html.motion-ready [data-motion-section].is-visible [data-motion="slide-up"],
+html.motion-ready [data-motion-section].is-visible [data-motion="slide-left"],
+html.motion-ready [data-motion-section].is-visible [data-motion="slide-right"],
+html.motion-ready [data-motion-section].is-visible [data-motion="scale"],
+html.motion-ready [data-motion-section].is-visible [data-motion="lift"] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+}
+
+html.motion-ready [data-motion-section] .section-label,
+html.motion-ready [data-motion-section] .section-title,
+html.motion-ready [data-motion-section] .cta-buttons,
+html.motion-ready [data-motion-section] .contact-email,
+html.motion-ready [data-motion-section] .footer-info,
+html.motion-ready [data-motion-section] .footer-links {
+    transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+html.motion-ready [data-motion-section] .about-item:nth-child(1),
+html.motion-ready [data-motion-section] .service-item:nth-child(1),
+html.motion-ready [data-motion-section] .portfolio-item:nth-child(1) { --i: 0; }
+html.motion-ready [data-motion-section] .about-item:nth-child(2),
+html.motion-ready [data-motion-section] .service-item:nth-child(2),
+html.motion-ready [data-motion-section] .portfolio-item:nth-child(2) { --i: 1; }
+html.motion-ready [data-motion-section] .about-item:nth-child(3),
+html.motion-ready [data-motion-section] .service-item:nth-child(3),
+html.motion-ready [data-motion-section] .portfolio-item:nth-child(3) { --i: 2; }
+html.motion-ready [data-motion-section] .service-item:nth-child(4),
+html.motion-ready [data-motion-section] .portfolio-item:nth-child(4) { --i: 3; }
+html.motion-ready [data-motion-section] .service-item:nth-child(5) { --i: 4; }
+html.motion-ready [data-motion-section] .service-item:nth-child(6) { --i: 5; }
+html.motion-ready [data-motion-section] .service-item:nth-child(7) { --i: 6; }
+html.motion-ready [data-motion-section] .service-item:nth-child(8) { --i: 7; }
+html.motion-ready [data-motion-section] .service-item:nth-child(9) { --i: 8; }
+
+html.motion-ready .hero h1 {
+    transition-delay: 40ms;
+}
+
+html.motion-ready .hero p {
+    transition-delay: 140ms;
+}
+
+html.motion-ready .cta-buttons {
+    transition-delay: 240ms;
+}
+
+html.motion-ready .hero-number {
+    transition-delay: 120ms;
+}
+
+html.motion-ready .about-item {
+    transition-delay: calc(var(--i, 0) * 100ms);
+}
+
+html.motion-ready .service-item {
+    transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+html.motion-ready .portfolio-item {
+    transition-delay: calc(var(--i, 0) * 110ms);
+}
+
+html.motion-ready .contact-email {
+    transition-delay: 160ms;
+}
+
+html.motion-ready footer [data-motion] {
+    transition-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.motion-ready [data-motion] {
+        transition: none !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
